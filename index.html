@@ -2,43 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For You ❤️</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
-      text-align: center;
-      padding: 40px;
-      color: #333;
-    }
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      max-width: 600px;
-      margin: auto;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    h1 {
-      color: #e91e63;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love ❤️</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="card">
-    <h1>Hi My Love ❤️</h1>
-    <p>
-      This website is just for you.  
-      I made this because you mean so much to me,  
-      and I want you to know how special you are every day.
-    </p>
-    <p>
-      Thank you for being my happiness, my comfort,  
-      and my favorite person.
-    </p>
-    <h3>Forever yours 💕</h3>
-  </div>
+  <!-- Header -->
+  <header>
+    <h1>For My Love ❤️</h1>
+    <p>Our story, month by month</p>
+  </header>
 
+  <!-- Timeline Section -->
+  <section class="timeline">
+    <div class="month">
+      <img src="images/jan.jpg" alt="January">
+      <p>January: Our first date ❤️</p>
+    </div>
+    <div class="month">
+      <img src="images/feb.jpg" alt="February">
+      <p>February: Our first trip together ✈️</p>
+    </div>
+    <div class="month">
+      <img src="images/mar.jpg" alt="March">
+      <p>March: Fun memories & laughs 😄</p>
+    </div>
+  </section>
+
+  <!-- Interactive Section -->
+  <section class="love-quiz">
+    <h2>Do you love me?</h2>
+    <button id="yes">Yes ❤️</button>
+    <button id="no">No 💔</button>
+  </section>
+
+  <!-- Countdown Section -->
+<section class="countdown">
+  <h2>Countdown to Our Special Days 💖</h2>
+  <div>
+    <p>Next Monthsary (<span id="monthsary-number"></span>): <span id="monthsary-timer"></span></p>
+    <p>Next Meet-sary (<span id="meetsary-number"></span>): <span id="meetsary-timer"></span></p>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Forever yours 💕</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
