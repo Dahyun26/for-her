@@ -27,30 +27,83 @@ header p {
   color: #6a0dad; /* slightly darker violet */
 }
 
-/* Timeline */
+/* Timeline (Horizontal Swipe) */
 .timeline {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 20px;
-  margin-bottom: 40px;
+  padding: 20px 10px;
+  scroll-behavior: smooth;
 }
+
+/* Hide scrollbar (optional, looks cleaner) */
+.timeline::-webkit-scrollbar {
+  display: none;
+}
+.timeline {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Month cards stay fixed size */
 .month {
-  background: #ffffff; /* white cards */
+  flex: 0 0 auto;
+  background: #ffffff;
   border-radius: 20px;
   padding: 20px;
   width: 200px;
-  box-shadow: 0 10px 20px rgba(155, 89, 182, 0.2); /* soft violet shadow */
+  box-shadow: 0 10px 20px rgba(155, 89, 182, 0.2);
   transition: transform 0.3s;
 }
-.month img {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 10px;
+
+.month {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
 }
-.month:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 25px rgba(155, 89, 182, 0.4);
+
+.month h3 {
+  font-size: 1.3em;
+  color: #6a0dad;
+  font-weight: bold;
+}
+
+/* Timeline Wrapper */
+.timeline-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+  background: #9b59b6;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(155, 89, 182, 0.4);
+  transition: 0.3s;
+}
+
+.scroll-btn:hover {
+  transform: scale(1.15);
+  background: #6a0dad;
+}
+
+/* Button Positions */
+.scroll-btn.left {
+  margin-right: 10px;
+}
+
+.scroll-btn.right {
+  margin-left: 10px;
 }
 
 /* Love Quiz Section */

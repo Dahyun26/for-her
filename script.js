@@ -108,3 +108,50 @@ function updateCountdown() {
 // Run countdown every second
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+// ===== Timeline Element =====
+const timeline = document.querySelector('.timeline');
+const scrollLeftBtn = document.getElementById('scrollLeft');
+const scrollRightBtn = document.getElementById('scrollRight');
+
+// ===== Drag to Scroll Timeline =====
+let isDown = false;
+let startX;
+let scrollLeft;
+
+timeline.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - timeline.offsetLeft;
+  scrollLeft = timeline.scrollLeft;
+});
+
+timeline.addEventListener('mouseleave', () => {
+  isDown = false;
+});
+
+timeline.addEventListener('mouseup', () => {
+  isDown = false;
+});
+
+timeline.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - timeline.offsetLeft;
+  const walk = (x - startX) * 2;
+  timeline.scrollLeft = scrollLeft - walk;
+});
+
+// ===== Timeline Scroll Buttons =====
+scrollLeftBtn.addEventListener('click', () => {
+  timeline.scrollBy({
+    left: -220,
+    behavior: 'smooth'
+  });
+});
+
+scrollRightBtn.addEventListener('click', () => {
+  timeline.scrollBy({
+    left: 220,
+    behavior: 'smooth'
+  });
+});
