@@ -155,3 +155,4 @@ scrollRightBtn.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+

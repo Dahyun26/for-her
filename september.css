@@ -1,0 +1,61 @@
+.september-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+}
+
+.memory {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Alternate layout for reverse class */
+.memory.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Images styling */
+.memory img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(155, 89, 182, 0.3);
+}
+
+/* Text styling */
+.memory p {
+  font-size: 1.1em;
+  color: #4b0082;
+  background: #f3eaff;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(155, 89, 182, 0.2);
+}
+
+/* Back button */
+.back-btn {
+  display: inline-block;
+  margin: 40px 20px;
+  padding: 10px 20px;
+  background: #9b59b6;
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #6a0dad;
+}
+
+.memory video {
+  width: 200px;   /* same size as images */
+  height: 200px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(155, 89, 182, 0.3);
+  object-fit: cover;
+}
