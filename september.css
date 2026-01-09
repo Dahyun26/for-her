@@ -1,3 +1,17 @@
+/* Base page */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #fff;
+}
+
+/* Header */
+header h1 {
+  margin: 20px;
+  color: #4b0082;
+}
+
+/* ===== Timeline Container ===== */
 .september-timeline {
   display: flex;
   flex-direction: column;
@@ -5,57 +19,76 @@
   padding: 20px;
 }
 
+/* ===== Memory Item ===== */
 .memory {
   display: flex;
   align-items: center;
   gap: 20px;
+  min-width: 600px; /* prevents excessive shrinking */
 }
 
-/* Alternate layout for reverse class */
+/* Alternate memory alignment */
 .memory.reverse {
   flex-direction: row-reverse;
 }
 
-/* Images styling */
-.memory img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(155, 89, 182, 0.3);
+/* ===== Media Box (Image/Video) ===== */
+.media {
+  width: 200px;       /* fixed width */
+  height: 200px;      /* fixed height */
+  flex: 0 0 200px;    /* locks the box size in flex layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Text styling */
+/* Image Styling */
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Video Styling */
+.media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* ===== Text Content ===== */
 .memory p {
-  font-size: 1.1em;
-  color: #4b0082;
+  text-align: justify;
   background: #f3eaff;
   padding: 15px;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(155, 89, 182, 0.2);
+  flex: 1; /* text fills remaining space */
 }
 
-/* Back button */
+/* ===== Back Button ===== */
 .back-btn {
   display: inline-block;
-  margin: 40px 20px;
-  padding: 10px 20px;
-  background: #9b59b6;
-  color: #fff;
-  border-radius: 12px;
+  margin: 20px;
+  padding: 10px 15px;
+  background-color: #f3eaff;
+  border-radius: 10px;
   text-decoration: none;
+  color: #6a1b9a;
   font-weight: bold;
-  transition: 0.3s;
 }
 
-.back-btn:hover {
-  background: #6a0dad;
-}
+/* ===== Responsive: Mobile ===== */
+@media (max-width: 600px) {
+  .memory,
+  .memory.reverse {
+    flex-direction: column; /* stack image/video and text */
+    align-items: flex-start;
+    min-width: auto; /* remove min width on small screens */
+  }
 
-.memory video {
-  width: 200px;   /* same size as images */
-  height: 200px;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(155, 89, 182, 0.3);
-  object-fit: cover;
+  .media {
+    margin-bottom: 10px; /* spacing when stacked */
+  }
 }
